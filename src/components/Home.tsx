@@ -149,7 +149,7 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
             <div className="relative shrink-0">
                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
                   <Avatar className="w-full h-full">
-                    <AvatarImage src={profilePhoto} alt="Profile" className="object-cover" />
+                    <AvatarImage src={profilePhoto} alt="Profile" className="object-cover scale-125 translate-y-2" />
                     <AvatarFallback className="text-2xl font-bold text-slate-400 bg-slate-100">СА</AvatarFallback>
                   </Avatar>
                </div>
