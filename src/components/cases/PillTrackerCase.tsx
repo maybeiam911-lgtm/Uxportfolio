@@ -65,7 +65,7 @@ const DeviceFrame = ({ children, title, label, type = "neutral" }: any) => (
     </div>
     
     <div className={`
-      relative w-[375px] h-[812px] bg-white rounded-[50px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] border-[8px] overflow-hidden transition-transform duration-500 hover:-translate-y-2
+      relative w-full max-w-[375px] h-[812px] bg-white rounded-[50px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] border-[8px] overflow-hidden transition-transform duration-500 hover:-translate-y-2
       ${type === 'accent' ? 'border-slate-900 shadow-indigo-900/20' : 'border-slate-300 shadow-slate-400/20'}
     `}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[30px] w-[150px] bg-black rounded-b-[20px] z-50" />
@@ -109,12 +109,12 @@ export function PillTrackerCase({ onBack }: { onBack: () => void }) {
           </p>
         </div>
 
-        <div className="flex flex-col xl:flex-row items-center justify-center gap-6 relative">
+        <div className="flex flex-col 2xl:flex-row items-center justify-center gap-6 relative flex-wrap">
           
             {/* Group: Problems + Before Device */}
-            <div className="flex flex-col-reverse 2xl:flex-row items-center 2xl:items-start gap-6 shrink-0">
+            <div className="flex flex-col-reverse xl:flex-row items-center xl:items-start gap-6 shrink-0 max-w-full">
                 {/* Problems Card */}
-                <div className="w-64 2xl:mt-32 shrink-0">
+                <div className="w-full xl:w-64 2xl:mt-32 shrink-0">
                     <div className="bg-white p-5 rounded-xl shadow-sm border border-red-100 text-sm text-slate-600 relative">
                         <div className="font-bold text-red-600 mb-2 flex items-center gap-2">
                         <ShieldCheck size={14} /> 
@@ -126,9 +126,9 @@ export function PillTrackerCase({ onBack }: { onBack: () => void }) {
                             <li>Визуальный шум и лишние детали</li>
                         </ul>
                         {/* Pointer for large screens (pointing right) */}
-                        <div className="hidden 2xl:block absolute top-6 -right-1.5 w-3 h-3 bg-white border-t border-r border-red-100 rotate-45" />
+                        <div className="hidden xl:block absolute top-6 -right-1.5 w-3 h-3 bg-white border-t border-r border-red-100 rotate-45" />
                         {/* Pointer for small screens (pointing up) */}
-                        <div className="block 2xl:hidden absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-red-100 rotate-45" />
+                        <div className="block xl:hidden absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-red-100 rotate-45" />
                     </div>
                 </div>
 
