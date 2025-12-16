@@ -93,7 +93,7 @@ export function PillTrackerCase({ onBack }: { onBack: () => void }) {
         </div>
       </nav>
 
-      <main className="max-w-[1800px] mx-auto px-6 py-12 md:py-20 overflow-x-hidden">
+      <main className="max-w-[1920px] mx-auto px-6 py-12 md:py-20 overflow-x-hidden">
         
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium mb-6">
@@ -109,56 +109,63 @@ export function PillTrackerCase({ onBack }: { onBack: () => void }) {
           </p>
         </div>
 
-        <div className="flex flex-col xl:flex-row items-center justify-center gap-12 relative">
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-6 relative">
           
-          {/* Arrow Before -> After */}
-          <div className="hidden xl:flex absolute top-1/2 left-[32%] -translate-y-1/2 z-0 text-slate-200">
-            <ArrowRight size={64} strokeWidth={1} />
-          </div>
+            {/* Group: Problems + Before Device */}
+            <div className="flex flex-col-reverse 2xl:flex-row items-center 2xl:items-start gap-6 shrink-0">
+                {/* Problems Card */}
+                <div className="w-64 2xl:mt-32 shrink-0">
+                    <div className="bg-white p-5 rounded-xl shadow-sm border border-red-100 text-sm text-slate-600 relative">
+                        <div className="font-bold text-red-600 mb-2 flex items-center gap-2">
+                        <ShieldCheck size={14} /> 
+                        Проблемы
+                        </div>
+                        <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-500 leading-relaxed">
+                            <li>Терминология базы данных («Инициализировать слот»)</li>
+                            <li>Холодный, отстраненный тон («Алерты», «Терминация»)</li>
+                            <li>Визуальный шум и лишние детали</li>
+                        </ul>
+                        {/* Pointer for large screens (pointing right) */}
+                        <div className="hidden 2xl:block absolute top-6 -right-1.5 w-3 h-3 bg-white border-t border-r border-red-100 rotate-45" />
+                        {/* Pointer for small screens (pointing up) */}
+                        <div className="block 2xl:hidden absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-red-100 rotate-45" />
+                    </div>
+                </div>
 
-           {/* Arrow After -> Impact */}
-           <div className="hidden xl:flex absolute top-1/2 right-[25%] -translate-y-1/2 z-0 text-slate-200">
-             <div className="flex flex-col items-center gap-2">
-                <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md max-w-[120px] text-center">
-                    Эмпатичный копи: «Забыли? Отметим сейчас»
-                </span>
-                <ArrowRight size={48} strokeWidth={1} className="text-indigo-200"/>
-             </div>
-          </div>
-
-          <div className="relative z-10 shrink-0">
-            <DeviceFrame title="Техническое ТЗ" label="До" type="neutral">
-              <BeforeView />
-            </DeviceFrame>
-            
-            <div className="absolute -left-4 top-32 -translate-x-full w-64 hidden 2xl:block">
-               <div className="bg-white p-5 rounded-xl shadow-sm border border-red-100 text-sm text-slate-600 relative">
-                 <div className="font-bold text-red-600 mb-2 flex items-center gap-2">
-                   <ShieldCheck size={14} /> 
-                   Проблемы
-                 </div>
-                 <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-500 leading-relaxed">
-                    <li>Терминология базы данных («Инициализировать слот»)</li>
-                    <li>Холодный, отстраненный тон («Алерты», «Терминация»)</li>
-                    <li>Визуальный шум и лишние детали</li>
-                 </ul>
-                 <div className="absolute top-6 -right-1.5 w-3 h-3 bg-white border-t border-r border-red-100 rotate-45" />
-               </div>
+                <div className="relative z-10 shrink-0">
+                    <DeviceFrame title="Техническое ТЗ" label="До" type="neutral">
+                    <BeforeView />
+                    </DeviceFrame>
+                </div>
             </div>
-          </div>
 
-          <div className="relative z-10 shrink-0">
-            <DeviceFrame title="Финальный дизайн" label="После" type="accent">
-              <div className="w-full h-full bg-white relative overflow-hidden">
-                 <AfterView />
-              </div>
-            </DeviceFrame>
-          </div>
+            {/* Arrow Before -> After */}
+            <div className="hidden xl:flex text-slate-200 shrink-0 mx-4">
+                <ArrowRight size={64} strokeWidth={1} />
+            </div>
 
-          {/* Impact Card - New Addition */}
-          <div className="relative z-10 shrink-0 mt-8 xl:mt-0 xl:self-center">
-             <ImpactCard />
-          </div>
+            <div className="relative z-10 shrink-0">
+                <DeviceFrame title="Финальный дизайн" label="После" type="accent">
+                    <div className="w-full h-full bg-white relative overflow-hidden">
+                        <AfterView />
+                    </div>
+                </DeviceFrame>
+            </div>
+
+             {/* Arrow After -> Impact */}
+            <div className="hidden xl:flex text-slate-200 shrink-0 mx-4">
+                 <div className="flex flex-col items-center gap-2">
+                    <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md max-w-[120px] text-center">
+                        Эмпатичный копи: «Забыли? Отметим сейчас»
+                    </span>
+                    <ArrowRight size={48} strokeWidth={1} className="text-indigo-200"/>
+                 </div>
+            </div>
+
+            {/* Impact Card */}
+            <div className="relative z-10 shrink-0 xl:self-center mt-8 xl:mt-0">
+                <ImpactCard />
+            </div>
 
         </div>
       </main>

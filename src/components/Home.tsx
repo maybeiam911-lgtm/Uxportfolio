@@ -4,7 +4,7 @@ import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
-import profilePhoto from 'figma:asset/379e69420e91b6a42fdd5fcc887ab6cca29c88df.png';
+import profilePhoto from 'figma:asset/94fde328b6e37189614bf1e114232d2a0a4314ce.png';
 
 const CaseCard = ({ title, category, description, icon: Icon, onClick, color }: any) => (
   <div 
@@ -147,7 +147,7 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
             
             {/* Avatar with decorative ring */}
             <div className="relative shrink-0">
-               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
+               <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
                   <Avatar className="w-full h-full">
                     <AvatarImage src={profilePhoto} alt="Profile" className="object-cover" />
                     <AvatarFallback className="text-2xl font-bold text-slate-400 bg-slate-100">СА</AvatarFallback>
