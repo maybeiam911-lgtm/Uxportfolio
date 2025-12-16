@@ -37,12 +37,10 @@ const ImpactCard = () => (
       </div>
 
       <div className="h-40 w-full -ml-4">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data}>
-              <Line type="monotone" dataKey="value" stroke="#4f46e5" strokeWidth={3} dot={{ r: 4, fill: '#4f46e5' }} />
-              <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#94a3b8' }} dy={10} />
-            </LineChart>
-          </ResponsiveContainer>
+          <LineChart width={280} height={160} data={data}>
+            <Line type="monotone" dataKey="value" stroke="#4f46e5" strokeWidth={3} dot={{ r: 4, fill: '#4f46e5' }} />
+            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#94a3b8' }} dy={10} />
+          </LineChart>
       </div>
       
       <div className="mt-4 pt-4 border-t border-slate-100 text-[10px] text-slate-400 text-center">
