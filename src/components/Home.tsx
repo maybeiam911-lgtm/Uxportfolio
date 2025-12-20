@@ -4,7 +4,7 @@ import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
 
-const profilePhoto = "https://allwebs.ru/image/IMG-9631-%281%29.dH8C0p";
+const profilePhoto = "https://allwebs.ru/images/2025/12/20/cf27c7b1db4426cb04b61a9f413b7da8.jpg";
 
 const CaseCard = ({ title, category, description, icon: Icon, onClick, color }: any) => (
   <div 
@@ -151,7 +151,7 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
                   <img 
                     src={profilePhoto} 
                     alt="Profile" 
-                    className="w-full h-full object-cover object-[center_35%]"
+                    className="w-full h-full object-cover object-[center_35%] scale-125"
                   />
                </div>
                <div className={`absolute -bottom-2 -right-2 ${role === 'lead' ? 'bg-indigo-600' : 'bg-slate-900'} text-white p-3 rounded-full border-4 border-white shadow-lg transition-colors`}>
