@@ -3,7 +3,8 @@ import { PenTool, ArrowRight, MessageSquare, Heart, Bot, Type, Layers, Users, Br
 import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
-import profilePhoto from 'figma:asset/bc724d4c12caf18c3ee300ceb96a242f8af24674.png';
+
+const profilePhoto = "https://github.com/maybeiam911-lgtm/Uxportfolio/blob/main/IMG_9631%20(1).JPG?raw=true";
 
 const CaseCard = ({ title, category, description, icon: Icon, onClick, color }: any) => (
   <div 
@@ -146,15 +147,15 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
             
             {/* Avatar with decorative ring */}
             <div className="relative shrink-0">
-               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
+               <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
                   <img 
                     src={profilePhoto} 
                     alt="Profile" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_35%]"
                   />
                </div>
-               <div className={`absolute -bottom-2 -right-2 ${role === 'lead' ? 'bg-indigo-600' : 'bg-slate-900'} text-white p-2.5 rounded-full border-4 border-white shadow-lg transition-colors`}>
-                  {role === 'ux' ? <PenTool size={20} /> : <Users size={20} />}
+               <div className={`absolute -bottom-2 -right-2 ${role === 'lead' ? 'bg-indigo-600' : 'bg-slate-900'} text-white p-3 rounded-full border-4 border-white shadow-lg transition-colors`}>
+                  {role === 'ux' ? <PenTool size={24} /> : <Users size={24} />}
                </div>
             </div>
           </div>

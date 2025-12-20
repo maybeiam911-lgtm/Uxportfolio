@@ -2331,6 +2331,10 @@
     object-fit: cover;
   }
 
+  .object-\[center_35\%\] {
+    object-position: center 35%;
+  }
+
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -3529,14 +3533,14 @@
   }
 
   @media (width >= 48rem) {
-    .md\:h-40 {
-      height: calc(var(--spacing) * 40);
+    .md\:h-52 {
+      height: calc(var(--spacing) * 52);
     }
   }
 
   @media (width >= 48rem) {
-    .md\:w-40 {
-      width: calc(var(--spacing) * 40);
+    .md\:w-52 {
+      width: calc(var(--spacing) * 52);
     }
   }
 
