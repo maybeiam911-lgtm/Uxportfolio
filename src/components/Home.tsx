@@ -4,7 +4,7 @@ import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
 
-const profilePhoto = "https://raw.githubusercontent.com/maybeiam911-lgtm/Uxportfolio/main/IMG_9631%20(1).JPG";
+const profilePhoto = "https://allwebs.ru/image/IMG-9631-%281%29.dH8C0p";
 
 const CaseCard = ({ title, category, description, icon: Icon, onClick, color }: any) => (
   <div 
