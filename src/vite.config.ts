@@ -7,9 +7,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // Это правило подскажет Vite, что figma:asset — это папка src/assets
+      "figma:asset": path.resolve(__dirname, "./src/assets"),
     },
   },
   build: {
-    outDir: 'dist', // Явно указываем выходную папку
+    outDir: 'dist',
   },
 })
