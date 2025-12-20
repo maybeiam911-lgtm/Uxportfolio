@@ -6,9 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      // Это правило подскажет Vite, что figma:asset — это папка src/assets
-      "figma:asset": path.resolve(__dirname, "./src/assets"),
+      "@": path.resolve(__dirname, "./"),
     },
   },
   build: {

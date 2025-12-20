@@ -3,7 +3,8 @@ import { PenTool, ArrowRight, MessageSquare, Heart, Bot, Type, Layers, Users, Br
 import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
-import profilePhoto from 'figma:asset/379e69420e91b6a42fdd5fcc887ab6cca29c88df.png';
+
+const profilePhoto = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
 
 const CaseCard = ({ title, category, description, icon: Icon, onClick, color }: any) => (
   <div 

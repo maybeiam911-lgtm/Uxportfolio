@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Bell, Smartphone, ShoppingBag, Heart, WifiOff, RefreshCw, ChevronRight } from 'lucide-react';
-import appIcon from "figma:asset/a1bd918951dde8f1501f4e7a74036d039dca61dd.png";
+import { Bell, Smartphone, ShoppingBag, Heart, WifiOff, RefreshCw, ChevronRight, Activity } from 'lucide-react';
 
 // --- DATA: Edit this list to change your examples ---
 const EXAMPLES = [
@@ -72,8 +71,8 @@ const LockScreenView = ({ title, body }: any) => (
      >
         <div className="flex items-center justify-between mb-2 opacity-70 text-xs uppercase tracking-wide">
             <div className="flex items-center gap-1.5">
-                <div className="w-5 h-5 rounded-[4px] bg-white flex items-center justify-center overflow-hidden">
-                    <img src={appIcon} alt="Icon" className="w-full h-full object-cover" />
+                <div className="w-5 h-5 rounded-[4px] bg-[#4B4FBF] flex items-center justify-center overflow-hidden shrink-0">
+                    <Activity size={12} className="text-white" />
                 </div>
                 <span>Здоровье.ру</span>
             </div>
@@ -99,8 +98,8 @@ const AppStoreView = ({ version, date, text }: any) => (
         className="p-5"
      >
         <div className="flex gap-4 mb-4">
-            <div className="w-16 h-16 bg-white rounded-2xl border border-slate-100 shrink-0 shadow-sm overflow-hidden p-1">
-                 <img src={appIcon} alt="App Icon" className="w-full h-full object-contain rounded-xl" />
+            <div className="w-16 h-16 bg-[#4B4FBF] rounded-2xl border border-slate-100 shrink-0 shadow-sm overflow-hidden flex items-center justify-center">
+                 <Activity size={32} className="text-white" />
             </div>
             <div className="flex-1">
                 <div className="font-semibold text-slate-900">Здоровье.ру</div>
