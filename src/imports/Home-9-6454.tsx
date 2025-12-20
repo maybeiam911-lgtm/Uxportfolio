@@ -2,7 +2,7 @@ import svgPaths from "./svg-wffnlskwbd";
 import imgImage from "figma:asset/e80e5cd269a16b06dbeae4209ef2eb539afae6ac.png";
 import imgImage1 from "figma:asset/0e840211593bfcc74538fb726fa52b1155f1ccb1.png";
 import imgImage2 from "figma:asset/419e0d8e418ae7eae36cf3085d47ee398de6c93a.png";
-import imgDefault from "figma:asset/1817f0795ba9297ad12786403b9d80d66653561e.png";
+import { Star } from 'lucide-react';
 
 function Container() {
   return (
@@ -1115,10 +1115,8 @@ function Content8() {
 
 function Default() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Default">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute left-[-28.13%] max-w-none size-[156.25%] top-[-21.88%]" src={imgDefault} />
-      </div>
+    <div className="relative shrink-0 size-[36px] flex items-center justify-center" data-name="Default">
+      <Star className="size-full text-yellow-400 fill-yellow-400" strokeWidth={1.5} />
     </div>
   );
 }
