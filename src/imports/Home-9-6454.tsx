@@ -1104,7 +1104,7 @@ function Content8() {
           <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-end relative shrink-0 text-[24px] w-full">
             <p className="leading-[32px]">Спасибо!</p>
           </div>
-          <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-end relative shrink-0 text-[16px] w-full">
+          <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-end relative shrink-0 text-[16px] w-full max-w-[260px] mx-auto">
             <p className="leading-[22px]">Поделитесь оценкой в App Store, чтобы помочь другим пользователям сделать выбор</p>
           </div>
         </div>

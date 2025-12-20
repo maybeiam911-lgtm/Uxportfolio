@@ -3,8 +3,7 @@ import { PenTool, ArrowRight, MessageSquare, Heart, Bot, Type, Layers, Users, Br
 import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
-import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
-import profilePhoto from 'figma:asset/94fde328b6e37189614bf1e114232d2a0a4314ce.png';
+import profilePhoto from 'figma:asset/379e69420e91b6a42fdd5fcc887ab6cca29c88df.png';
 
 const CaseCard = ({ title, category, description, icon: Icon, onClick, color }: any) => (
   <div 
@@ -147,11 +146,12 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
             
             {/* Avatar with decorative ring */}
             <div className="relative shrink-0">
-               <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
-                  <Avatar className="w-full h-full">
-                    <AvatarImage src={profilePhoto} alt="Profile" className="object-cover scale-125 translate-y-2" />
-                    <AvatarFallback className="text-2xl font-bold text-slate-400 bg-slate-100">СА</AvatarFallback>
-                  </Avatar>
+               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-indigo-100 ring-1 ring-slate-100">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
                </div>
                <div className={`absolute -bottom-2 -right-2 ${role === 'lead' ? 'bg-indigo-600' : 'bg-slate-900'} text-white p-2.5 rounded-full border-4 border-white shadow-lg transition-colors`}>
                   {role === 'ux' ? <PenTool size={20} /> : <Users size={20} />}

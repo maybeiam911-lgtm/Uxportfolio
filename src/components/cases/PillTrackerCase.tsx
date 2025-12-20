@@ -2,7 +2,7 @@ import React from 'react';
 import AfterView from '../../imports/Настройка';
 import { BeforeView } from '../BeforeView';
 import { ArrowRight, Heart, ShieldCheck, ArrowLeft, TrendingUp } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis } from 'recharts';
 
 const data = [
   { name: 'До', value: 20 },
@@ -10,7 +10,7 @@ const data = [
 ];
 
 const ImpactCard = () => (
-  <div className="w-[300px] bg-white rounded-[30px] p-6 shadow-xl border border-slate-100 flex flex-col h-[400px]">
+  <div className="w-[300px] bg-white rounded-[30px] p-6 shadow-xl border border-slate-100 flex flex-col h-[400px] shrink-0">
       <div className="flex items-center gap-2 mb-6">
           <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center">
              <TrendingUp size={20} />
@@ -50,7 +50,7 @@ const ImpactCard = () => (
 );
 
 const DeviceFrame = ({ children, title, label, type = "neutral" }: any) => (
-  <div className="flex flex-col items-center gap-6 group">
+  <div className="flex flex-col items-center gap-6 group shrink-0">
     <div className="flex flex-col items-center gap-2">
       <div className={`px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase ${
         type === 'accent' 
@@ -63,14 +63,13 @@ const DeviceFrame = ({ children, title, label, type = "neutral" }: any) => (
     </div>
     
     <div className={`
-      relative w-full max-w-[375px] h-[812px] bg-white rounded-[50px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] border-[8px] overflow-hidden transition-transform duration-500 hover:-translate-y-2
+      relative w-[375px] h-[812px] bg-white rounded-[50px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] border-[8px] overflow-hidden
       ${type === 'accent' ? 'border-slate-900 shadow-indigo-900/20' : 'border-slate-300 shadow-slate-400/20'}
     `}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[30px] w-[150px] bg-black rounded-b-[20px] z-50" />
       <div className="w-full h-full overflow-hidden bg-white relative">
         {children}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500 z-50 rounded-[40px]" />
     </div>
   </div>
 );
@@ -91,7 +90,7 @@ export function PillTrackerCase({ onBack }: { onBack: () => void }) {
         </div>
       </nav>
 
-      <main className="max-w-[1920px] mx-auto px-6 py-12 md:py-20 overflow-x-hidden">
+      <main className="w-full px-6 py-12 md:py-20">
         
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium mb-6">
@@ -107,64 +106,72 @@ export function PillTrackerCase({ onBack }: { onBack: () => void }) {
           </p>
         </div>
 
-        <div className="flex flex-col 2xl:flex-row items-center justify-center gap-6 relative flex-wrap">
-          
-            {/* Group: Problems + Before Device */}
-            <div className="flex flex-col-reverse xl:flex-row items-center xl:items-start gap-6 shrink-0 max-w-full">
-                {/* Problems Card */}
-                <div className="w-full xl:w-64 2xl:mt-32 shrink-0">
-                    <div className="bg-white p-5 rounded-xl shadow-sm border border-red-100 text-sm text-slate-600 relative">
-                        <div className="font-bold text-red-600 mb-2 flex items-center gap-2">
-                        <ShieldCheck size={14} /> 
-                        Проблемы
+        {/* Scrollable container */}
+        <div className="overflow-x-auto pb-12 -mx-6 px-6 custom-scrollbar">
+            {/* Main Flex Container - No absolute positioning involved */}
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:items-center gap-8 lg:gap-4 w-fit mx-auto min-w-min">
+            
+                {/* Group 1: Problems + Device "Before" */}
+                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 shrink-0">
+                    
+                    {/* Problems Card */}
+                    <div className="w-full lg:w-64 order-2 lg:order-1 lg:mt-48 shrink-0">
+                        <div className="bg-white p-5 rounded-xl shadow-sm border border-red-100 text-sm text-slate-600 relative mx-auto max-w-[300px] lg:max-w-none">
+                            <div className="font-bold text-red-600 mb-2 flex items-center gap-2">
+                                <ShieldCheck size={14} /> 
+                                Проблемы
+                            </div>
+                            <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-500 leading-relaxed">
+                                <li>Терминология базы данных («Инициализировать слот»)</li>
+                                <li>Холодный, отстраненный тон («Алерты», «Терминация»)</li>
+                                <li>Визуальный шум и лишние детали</li>
+                            </ul>
+                            {/* Arrow for Desktop (pointing right to device) */}
+                            <div className="hidden lg:block absolute top-6 -right-1.5 w-3 h-3 bg-white border-t border-r border-red-100 rotate-45" />
+                            {/* Arrow for Mobile (pointing up to device) */}
+                            <div className="block lg:hidden absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-red-100 rotate-45" />
                         </div>
-                        <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-500 leading-relaxed">
-                            <li>Терминология базы данных («Инициализировать слот»)</li>
-                            <li>Холодный, отстраненный тон («Алерты», «Терминация»)</li>
-                            <li>Визуальный шум и лишние детали</li>
-                        </ul>
-                        {/* Pointer for large screens (pointing right) */}
-                        <div className="hidden xl:block absolute top-6 -right-1.5 w-3 h-3 bg-white border-t border-r border-red-100 rotate-45" />
-                        {/* Pointer for small screens (pointing up) */}
-                        <div className="block xl:hidden absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-red-100 rotate-45" />
                     </div>
+
+                    {/* Device "Before" */}
+                    <div className="order-1 lg:order-2 shrink-0">
+                        <DeviceFrame title="Техническое ТЗ" label="До" type="neutral">
+                            <BeforeView />
+                        </DeviceFrame>
+                    </div>
+
                 </div>
 
-                <div className="relative z-10 shrink-0">
-                    <DeviceFrame title="Техническое ТЗ" label="До" type="neutral">
-                    <BeforeView />
+                {/* Arrow 1 */}
+                <div className="hidden lg:flex shrink-0 text-slate-200 w-24 justify-center">
+                     <ArrowRight size={64} strokeWidth={1} />
+                </div>
+
+                {/* Device "After" */}
+                <div className="shrink-0">
+                    <DeviceFrame title="Финальный дизайн" label="После" type="accent">
+                        <div className="w-full h-full bg-white relative overflow-hidden">
+                            <AfterView />
+                        </div>
                     </DeviceFrame>
                 </div>
-            </div>
 
-            {/* Arrow Before -> After */}
-            <div className="hidden xl:flex text-slate-200 shrink-0 mx-4">
-                <ArrowRight size={64} strokeWidth={1} />
-            </div>
-
-            <div className="relative z-10 shrink-0">
-                <DeviceFrame title="Финальный дизайн" label="После" type="accent">
-                    <div className="w-full h-full bg-white relative overflow-hidden">
-                        <AfterView />
+                {/* Arrow 2 with Text */}
+                <div className="hidden lg:flex shrink-0 text-slate-200 w-48 justify-center">
+                    <div className="flex flex-col items-center gap-2">
+                        <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md max-w-[120px] text-center">
+                            Эмпатичный копи: «Забыли? Отметим сейчас»
+                        </span>
+                        <ArrowRight size={48} strokeWidth={1} className="text-indigo-200"/>
                     </div>
-                </DeviceFrame>
-            </div>
+                </div>
 
-             {/* Arrow After -> Impact */}
-            <div className="hidden xl:flex text-slate-200 shrink-0 mx-4">
-                 <div className="flex flex-col items-center gap-2">
-                    <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md max-w-[120px] text-center">
-                        Эмпатичный копи: «Забыли? Отметим сейчас»
-                    </span>
-                    <ArrowRight size={48} strokeWidth={1} className="text-indigo-200"/>
-                 </div>
-            </div>
+                {/* Impact Card */}
+                <div className="shrink-0 lg:self-center mt-8 lg:mt-0">
+                    <ImpactCard />
+                </div>
 
-            {/* Impact Card */}
-            <div className="relative z-10 shrink-0 xl:self-center mt-8 xl:mt-0">
-                <ImpactCard />
             </div>
-
         </div>
       </main>
     </div>
