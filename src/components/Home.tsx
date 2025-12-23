@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PenTool, ArrowRight, MessageSquare, Heart, Bot, Type, Layers, Users, Briefcase } from 'lucide-react';
+import { PenTool, ArrowRight, MessageSquare, Heart, Bot, Type, Layers, Users, Briefcase, FileText } from 'lucide-react';
 import { MicrocopyGallery } from './MicrocopyGallery';
 import { SkillsGrid } from './SkillsGrid';
 import { ContactSection } from './ContactSection';
@@ -235,6 +235,14 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
                             color="rose"
                             onClick={() => onNavigate('pills')}
                         />
+                        <CaseCard 
+                            title="Медицинские данные"
+                            category="Information Architecture"
+                            description="Редизайн инструкции к препарату. Превращение юридического текста в понятные иконки."
+                            icon={FileText}
+                            color="teal"
+                            onClick={() => onNavigate('complex')}
+                        />
                     </div>
                 </section>
 
@@ -281,6 +289,14 @@ export function Home({ onNavigate }: { onNavigate: (page: string) => void }) {
                             icon={Heart}
                             color="rose"
                             onClick={() => onNavigate('pills')}
+                        />
+                        <CaseCard 
+                            title="Медицинские данные"
+                            category="Information Architecture"
+                            description="Редизайн инструкции к препарату. Превращение юридического текста в понятные иконки."
+                            icon={FileText}
+                            color="teal"
+                            onClick={() => onNavigate('complex')}
                         />
                     </div>
                 </section>

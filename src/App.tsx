@@ -3,6 +3,7 @@ import { Home } from './components/Home';
 import { FeedbackCase } from './components/cases/FeedbackCase';
 import { PillTrackerCase } from './components/cases/PillTrackerCase';
 import { ChatBotCase } from './components/cases/ChatBotCase';
+import { SimpleComplexCase } from './components/cases/SimpleComplexCase';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -17,6 +18,8 @@ export default function App() {
         return <PillTrackerCase onBack={() => setCurrentPage('home')} />;
       case 'chatbot':
         return <ChatBotCase onBack={() => setCurrentPage('home')} />;
+      case 'complex':
+        return <SimpleComplexCase onBack={() => setCurrentPage('home')} />;
       default:
         return <Home onNavigate={setCurrentPage} />;
     }
